@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * get_printf - get_printf to get function from function.c
  * @ap: arg
@@ -22,15 +23,14 @@ int get_printf(const char c, va_list ap)
 		{'X', pHEX},
 		{'p', ppntr},
 };
-
-while (type[i].data != 0)
-{
-	if (type[i].data == c)
+	while (type[i].data != 0)
+	{
+		if (type[i].data == c)
 		{
-		       j += type[i].f(ap);
-		       return (j);
+			j += type[i].f(ap);
+			return (j);
 		}
-	       i++;
-}
-return (0);
+		i++;
+	}
+	return (0);
 }
